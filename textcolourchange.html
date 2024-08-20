@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Toggle Example</title>
+  <style>
+    .container {
+      width: 300px;
+      height: 300px;
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #000;
+      margin-bottom: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: blue;
+      color: lightyellow;
+      border: none;
+      cursor: pointer;
+    }
+    .text {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="text">Initial Text</div>
+  </div>
+  
+  <button class="btn" onclick="toggleState()">Click me</button>
+
+  <script>
+    let toggled = false;
+
+    function toggleState() {
+      const container = document.querySelector('.container');
+      const text = document.querySelector('.text');
+
+      if (!toggled) {
+        container.style.backgroundColor = 'orange';
+        text.textContent = 'Changed Text';
+      } else {
+        container.style.backgroundColor = 'skyblue';
+        text.textContent = 'Initial Text';
+      }
+
+      toggled = !toggled;
+    }
+  </script>
+
+</body>
+</html>
